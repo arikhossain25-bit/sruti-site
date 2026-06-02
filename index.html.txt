@@ -1,0 +1,286 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sruti</title>
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:20px;
+padding:15px;
+backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.4);
+z-index:10;
+}
+
+nav a{
+color:#ff4d6d;
+text-decoration:none;
+font-size:14px;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:url('sruti.jpg') center/cover no-repeat;
+filter:blur(10px) brightness(0.4);
+transform:scale(1.1);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+h1{
+font-size:42px;
+color:#ff4d6d;
+margin:0;
+}
+
+p{
+max-width:600px;
+color:#ddd;
+}
+
+.typing{
+margin-top:15px;
+font-size:18px;
+color:#ffb3c1;
+border-right:2px solid #ff4d6d;
+white-space:nowrap;
+overflow:hidden;
+width:0;
+animation:typing 4s steps(30,end) infinite;
+}
+
+@keyframes typing{
+0%{width:0}
+50%{width:200px}
+100%{width:0}
+}
+
+section{
+padding:80px 20px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+padding:20px;
+margin:15px 0;
+border-radius:12px;
+border:1px solid rgba(255,77,109,0.2);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.heart{
+position:absolute;
+color:#ff4d6d;
+animation:float 6s linear infinite;
+opacity:0.6;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh) scale(0.5);opacity:0}
+50%{opacity:1}
+100%{transform:translateY(-10vh) scale(1.2);opacity:0}
+}
+
+.envelope{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:12px;
+cursor:pointer;
+}
+
+.letter{
+display:none;
+margin-top:15px;
+color:#ddd;
+line-height:1.6;
+}
+
+button{
+background:#ff4d6d;
+border:none;
+padding:12px 20px;
+color:#fff;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.glow{
+text-align:center;
+font-size:22px;
+color:#ff4d6d;
+margin-top:40px;
+text-shadow:0 0 10px #ff4d6d;
+}
+</style>
+</head>
+<body>
+<nav>
+<a href="#home">Home</a>
+<a href="#story">Our Story</a>
+<a href="#love">Things I Love</a>
+<a href="#letter">Letter</a>
+<a href="#forever">Forever</a>
+</nav>
+<div class="hero" id="home">
+<div class="hero-content">
+<h1>For My Jaan ❤️</h1>
+<p>Some people take years to become important. You somehow did it in days.</p>
+<div class="typing">I missed you very much.</div>
+</div>
+</div>
+<section id="story">
+<div class="card">
+<h2>24 May</h2>
+<p>
+Not the day we put a label on us.<br>
+The day we started choosing each other.<br><br>
+You were healing.<br>
+You weren’t ready for labels.<br>
+But somehow we became each other’s favorite person.
+</p>
+</div>
+</section>
+<section id="love">
+<div class="grid">
+<div class="card">Your Boldness<br>You never hide who you are.</div>
+<div class="card">Your Care<br>You care about me more than you realize.</div>
+<div class="card">Our Calls<br>My favorite part of the day.</div>
+<div class="card">The Little Things<br>Even the tiny white strands in your hair make me smile.</div>
+<div class="card">Your Obsession With Me<br>It’s one of my favorite things about you.</div>
+</div>
+</section>
+<section>
+<div class="card">
+“My baby”<br><br>
+“Jabone korbone”<br><br>
+The way she says I love you when pushed.
+</div>
+</section>
+<section>
+<div class="card">
+When we stopped talking for five hours, I waited.<br><br>
+You called first.<br><br>
+You chose us over ego.
+</div>
+</section>
+<section id="letter">
+<div class="envelope" onclick="openLetter()">
+Tap to open letter
+<div class="letter" id="letterBox">
+Sruti,<br><br>
+You don’t like labels.<br>
+I understand why.<br><br>
+You’ve been hurt before.<br><br>
+I’m not asking for labels.<br>
+I’m asking for time.<br><br>
+Time to show you what we have is real.<br><br>
+I love your confidence.<br>
+I love your care.<br>
+I love our calls.<br><br>
+You are my favorite notification.<br>
+My favorite call.<br>
+My favorite person.<br><br>
+I love you very much, jaan.<br><br>
+Forever yours,<br>
+Arik ❤️
+</div>
+</div>
+</section>
+<section id="forever">
+<div class="card">
+Birthday<br>
+12 December 2006
+<div id="countdown"></div>
+</div>
+<div class="glow">
+Thank you for calling first.
+</div>
+<div class="card">
+I missed you more than my ego would admit.
+<button onclick="reveal()">One More Thing</button>
+<div id="reveal" style="display:none;margin-top:10px;">
+I love you, jaan ❤️
+</div>
+</div>
+</section>
+<script>
+function openLetter(){
+document.getElementById("letterBox").style.display="block";
+}
+
+function reveal(){
+document.getElementById("reveal").style.display="block";
+}
+
+const countdown=document.getElementById("countdown");
+const target=new Date("Dec 12, 2026 00:00:00").getTime();
+
+setInterval(()=>{
+let now=new Date().getTime();
+let diff=target-now;
+
+let d=Math.floor(diff/(1000*60*60*24));
+let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+let m=Math.floor((diff%(1000*60*60))/(1000*60));
+let s=Math.floor((diff%(1000*60))/1000);
+
+countdown.innerHTML=d+"d "+h+"h "+m+"m "+s+"s";
+},1000);
+
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(10+Math.random()*20)+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},500);
+</script>
+</body>
+</html>
+
